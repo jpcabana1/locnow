@@ -13,14 +13,16 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("http://localhost:3001/filmes")
-      .then((res) => res.json())
-      .then((result) => {
-        dispatch(carregarFilmes(result));
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
+    setTimeout(() => {
+      fetch("http://localhost:3001/filmes")
+        .then((res) => res.json())
+        .then((result) => {
+          dispatch(carregarFilmes(result));
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    }, 500);
   }, []);
 
   return (

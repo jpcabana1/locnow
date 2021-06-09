@@ -1,6 +1,6 @@
 export const ADICIONARCARRINHO = "ADICIONARCARRINHO";
 export const REMOVERCARRINHO = "REMOVERCARRINHO";
-export const AJUSTARDATA = "AJUSTARDATA";
+export const LIMPARCARRINHO = "LIMPARCARRINHO";
 
 export function adcionarCarrinho(item) {
   return {
@@ -13,5 +13,12 @@ export function removerCarrinho(id) {
   return {
     type: REMOVERCARRINHO,
     payload: id,
+  };
+}
+
+export function limparCarrinho() {
+  return {
+    type: LIMPARCARRINHO,
+    payload: null,
   };
 }

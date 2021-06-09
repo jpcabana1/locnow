@@ -1,0 +1,6 @@
+.carrinhoPainel {
+  width: 80rem;
+  height: 10rem;
+  display: block;
+  place-items: center;
+}

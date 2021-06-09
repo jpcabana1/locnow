@@ -1,4 +1,8 @@
-import { ADICIONARCARRINHO, REMOVERCARRINHO } from "./carrinhoActions";
+import {
+  ADICIONARCARRINHO,
+  REMOVERCARRINHO,
+  LIMPARCARRINHO,
+} from "./carrinhoActions";
 
 export const carrinhoReducer = (state = [], action) => {
   switch (action.type) {
@@ -13,9 +17,13 @@ export const carrinhoReducer = (state = [], action) => {
     }
     case REMOVERCARRINHO: {
       const id = action.payload;
-      let filtro = state.filter((item) => item.idFilme !== parseInt(id));
       console.log(id);
+      let filtro = state.filter((item) => item.idFilme !== parseInt(id));
       state = filtro;
+      return state;
+    }
+    case LIMPARCARRINHO: {
+      state = [];
       return state;
     }
     default:
