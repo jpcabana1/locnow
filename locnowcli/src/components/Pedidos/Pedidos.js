@@ -13,7 +13,6 @@ function Pedidos() {
   const handleClick = (e) => {
     let index = parseInt(e.target.value);
     setSelecionado(pedidos.filter((pedido) => pedido.id === index));
-
     setShow(!show);
   };
 
